@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="coff">
+        <a href="index.html" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Wróć
+        </a>
+        <div class="title">mDowód</div>
+        <a href="#" class="help-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M20.94 11A8.94 8.94 0 1112 3a8.94 8.94 0 018.94 8z" />
+            </svg>
+        </a>
+      </div> 
+      
+      <div class="content">
+        <div id="czas" class="czas"></div>
+        <nav class="navbar">
+    
+            <img class="dowod" src="DOWODs.gif" width="370">
+            <img class="dowo" src="guz1.png" width="340">
+            <img class="dowo" src="guz2.png" width="340">
+            <img class="dowo" src="guz3.png" width="340">
+            <img class="dowo" src="guz4.png" width="340">
+            <img class="dowo" src="guz5.png" width="340">
+        </nav>
+        </div>
+    </div>
+</body>
+<style>
+     .navbarr{
+            width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background-color: #f3f4f9;
+      
+       text-align: center;
+        position: fixed;
+        bottom: 0;
+        
+        
+        }
+        .dowo{
+            width: 90%;
+            text-align: center;
+            border: 1px solid w;
+            border-radius: 15px;
+            background-color: #ffffff;
+            box-shadow: 1px 1px 10px 1px rgb(223, 222, 222);
+            margin-bottom: 15px;
+        }
+        .dowod{
+            width: 100%;
+            text-align: center;
+        }
+        .dow{
+            
+            margin-left:80px ;
+            margin-right:100px ;
+        }
+        @media (max-width: 420px){
+        
+            .dow{
+                margin-left: 40px ;
+            margin-right: 60px ;
+            }
+          } 
+        
+    .navbar{
+            
+            text-align: center;
+            width: 100%;
+            display: flexbox;
+        }
+     #czas {
+     font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    
+    }
+     body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+        }
+        .coff {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; /* Utrzymuje navbar na wierzchu */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f5f7fa;
+            padding: 10px 30px;
+            
+        }
+        .coff .back-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #006eff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .coff .back-btn  {
+            width: 20px;
+            height: 20px;
+            margin-right: 1px;
+        }
+        .coff .title {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            color: #000;
+        }
+        .coff .help-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f7fa;
+            border: 1px solid #f5f7fa;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #555;
+        }
+        .content {
+            margin-top: 60px; /* Dodaje odstęp, żeby treść nie zasłaniała navbaru */
+            margin-left:10px ;
+            margin-right:10px ;
+        }
+        
+      
+    
+       
+</style>
+<script>
+    function aktualizujCzas() {
+  const teraz = new Date();
+  const godzina = teraz.getHours().toString().padStart(2, '0');
+  const minuta = teraz.getMinutes().toString().padStart(2, '0');
+  const sekunda = teraz.getSeconds().toString().padStart(2, '0');
+  const dzien = teraz.getDate().toString().padStart(2, '0');
+  const miesiac = (teraz.getMonth() + 1).toString().padStart(2, '0');
+  const rok = teraz.getFullYear();
+
+  document.getElementById('czas').textContent = `Czas: ${godzina}:${minuta}:${sekunda} ${dzien}.${miesiac}.${rok}`;
+}
+
+// Uruchomienie aktualizacji czasu co sekundę
+setInterval(aktualizujCzas, 1000);
+
+// Wywołanie funkcji od razu po załadowaniu
+aktualizujCzas();
+
+  </script>
+</html>
